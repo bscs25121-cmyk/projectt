@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zixel</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Nunito:wght@400;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="map"></canvas>
+
+<div id="top">
+  <div class="card logo"><svg width="26" height="22" viewBox="0 0 70 60" aria-hidden="true"><path d="M10 0h20v10H10zM40 0h20v10H40zM0 10h70v20H0zM10 30h50v10H10zM20 40h30v10H20zM30 50h10v10H30z" fill="#d81b60"/></svg>ZIXEL<span class="pill" id="live">LIVE</span></div>
+  <div class="searchbox">
+    <input id="q" class="card" aria-label="Search places and artworks" placeholder="Search places or artworks" autocomplete="off">
+    <div id="results" class="card" hidden></div>
+  </div>
+  <div class="grow"></div>
+  <div class="card chip"><div class="avatar"></div><div><b id="who">you</b><small id="count">0 pixels painted</small></div></div>
+</div>
+
+<div id="side">
+  <button class="ibtn card" id="zin" aria-label="Zoom in"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>
+  <button class="ibtn card" id="zout" aria-label="Zoom out"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M5 12h14"/></svg></button>
+  <button class="ibtn card" id="loc" aria-label="My location"><svg width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="6" fill="none"/><path d="M12 1v4M12 19v4M1 12h4M19 12h4"/></svg></button>
+</div>
+
+<div id="board" class="card"><b>Top painters</b><ol id="top5"></ol></div>
+
+<div id="dock" class="card">
+  <div class="row"><b id="chg">Pixels 0 / 10</b><div class="bar"><div id="fill"></div></div><span id="next"></span></div>
+  <div id="sw" class="row wrap"></div>
+  <div class="row wrap">
+    <button class="btn primary" id="paint">Paint</button>
+    <button class="btn" id="undo">Undo</button>
+    <button class="btn" id="imp">Import image</button>
+    <button class="btn" id="cust">Custom palette: off</button>
+  </div>
+</div>
+
+<div id="tip" class="card" hidden></div>
+<div id="toast" hidden></div>
+<input type="file" id="file" accept="image/*" hidden>
+
+<div id="login">
+  <form class="card" id="form">
+    <div class="logo2"><svg width="34" height="29" viewBox="0 0 70 60" aria-hidden="true"><path d="M10 0h20v10H10zM40 0h20v10H40zM0 10h70v20H0zM10 30h50v10H10zM20 40h30v10H20zM30 50h10v10H30z" fill="#d81b60"/></svg>ZIXEL</div>
+    <p>Pick a name to start painting the world.</p>
+    <input id="name" class="card" aria-label="Your name" maxlength="16" placeholder="Your name" autocomplete="off" autofocus>
+    <div id="err" role="alert"></div>
+    <button class="btn primary" type="submit">Enter Zixel</button>
+  </form>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

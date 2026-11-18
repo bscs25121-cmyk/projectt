@@ -1,0 +1,47 @@
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;overflow:hidden;background:#f7c6dd;color:#4a0d2c;font-family:'Nunito',system-ui,sans-serif}
+[hidden]{display:none!important}
+#map{position:fixed;inset:0;width:100%;height:100%;touch-action:none;cursor:grab}
+#map.paint{cursor:crosshair}
+.card{background:#fff;border:3px solid #f48fb1;border-radius:14px}
+#top{position:fixed;top:16px;left:16px;right:16px;display:flex;flex-wrap:wrap;align-items:center;gap:12px;pointer-events:none;z-index:5}
+#top>*{pointer-events:auto}
+.grow{flex:1 1 0}
+.logo{display:flex;align-items:center;gap:10px;padding:8px 14px;font:16px 'Press Start 2P',monospace;color:#b0124f}
+.pill{font:800 12px 'Nunito',system-ui,sans-serif;background:#c2185b;color:#fff;padding:3px 9px;border-radius:99px}
+.searchbox{position:relative;flex:1 1 220px;max-width:400px}
+#q{width:100%;min-height:48px;padding:0 16px;font:400 16px 'Nunito',system-ui,sans-serif;color:#4a0d2c}
+#results{position:absolute;top:54px;left:0;right:0;padding:6px}
+#results button{display:block;width:100%;text-align:left;background:none;border:0;padding:10px 12px;font:400 15px 'Nunito',system-ui,sans-serif;color:#4a0d2c;cursor:pointer;border-radius:8px}
+#results button:hover{background:#ffe3ef}
+.chip{display:flex;align-items:center;gap:10px;padding:6px 14px 6px 8px;line-height:1.2}
+.chip small{display:block;font-size:12px;color:#5b1237}
+.avatar{width:34px;height:34px;border-radius:50%;background:#e0457b;border:3px solid #7b1e4d}
+#side{position:fixed;right:16px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:5}
+.ibtn{width:48px;height:48px;display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer}
+.ibtn svg{stroke:#b0124f;stroke-width:3;stroke-linecap:round;fill:none}
+#board{position:fixed;left:16px;bottom:20px;padding:10px 14px;font-size:14px;z-index:4;min-width:150px}
+#board ol{margin:6px 0 0;padding-left:20px}
+#board li{margin:2px 0}
+#dock{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);width:calc(100% - 32px);max-width:780px;padding:14px;display:flex;flex-direction:column;gap:12px;z-index:5}
+.row{display:flex;align-items:center;gap:12px;font-size:15px}
+.wrap{flex-wrap:wrap;gap:6px}
+.row.wrap:last-child{gap:10px}
+.bar{flex:1 1 120px;height:12px;border-radius:6px;background:#ffe3ef;border:2px solid #c2185b}
+#fill{height:100%;width:0;border-radius:4px;background:#d81b60;transition:width .3s}
+.sw{width:40px;height:40px;border-radius:8px;border:3px solid #7b1e4d;cursor:pointer;padding:0;position:relative}
+.sw.sel{box-shadow:0 0 0 3px #fff,0 0 0 6px #4a0d2c}
+.sw.pick::after{content:'\2713';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:800 18px sans-serif;color:#fff;text-shadow:0 0 3px #000,0 0 3px #000}
+.btn{min-height:48px;padding:0 18px;border-radius:12px;border:3px solid #c2185b;background:#fff;color:#b0124f;font:800 15px 'Nunito',system-ui,sans-serif;cursor:pointer}
+.btn.primary{background:#c2185b;color:#fff;padding:0 24px}
+.btn.on{background:#4a0d2c;border-color:#4a0d2c;color:#fff}
+#tip{position:fixed;z-index:6;padding:10px 14px;font-size:14px;line-height:1.35;transform:translate(-50%,-100%);margin-top:-10px;pointer-events:none;white-space:nowrap}
+#tip small{display:block;color:#5b1237;font-size:12px}
+#toast{position:fixed;left:50%;top:84px;transform:translateX(-50%);background:#4a0d2c;color:#fff;padding:10px 18px;border-radius:12px;font-weight:800;z-index:9;max-width:90%}
+#login{position:fixed;inset:0;z-index:20;display:flex;align-items:center;justify-content:center;background:rgba(255,240,246,.55);backdrop-filter:blur(3px)}
+#form{width:min(380px,92%);padding:26px;display:flex;flex-direction:column;gap:14px;text-align:center}
+.logo2{font:22px 'Press Start 2P',monospace;color:#b0124f;display:flex;gap:12px;justify-content:center;align-items:center}
+#form p{margin:0;font-size:16px}
+#name{min-height:48px;padding:0 16px;font:400 18px 'Nunito',system-ui,sans-serif;color:#4a0d2c;text-align:center}
+#err{min-height:20px;color:#b0124f;font-weight:800;font-size:14px}
+@media (max-width:700px){#board{display:none}.sw{width:34px;height:34px}}
